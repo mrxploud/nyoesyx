@@ -83,9 +83,9 @@ No need to compile the whole repository. The project is distributed with a clean
 
 ## ☕ Support the Project
 
-NYoesyx is a pioneering open-source project built with massive effort. If this language helped you or your AI in research or projects, consider buying the creator a coffee!
+NYoesyx is a pioneering open-source project built with massive effort. If this language helped you or your AI in research or projects, consider supporting the creator!
 
-<a href="https://buymeacoffee.com/mrxploud" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://link.mercadopago.com.br/mrxploud" target="_blank"><img src="https://img.shields.io/badge/Mercado_Pago-00B1EA?style=for-the-badge&logo=mercado-pago&logoColor=white" alt="Donate with Mercado Pago" ></a>
 
 ---
 
