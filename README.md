@@ -1,85 +1,86 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SeuNome/nyoesyx/main/NYoesyx.png" alt="NYoesyx Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/mrxploud/nyoesyx/main/NYoesyx.png" alt="NYoesyx Logo" width="200"/>
   <h1>NYoesyx (N-OS)</h1>
-  <p><b>A primeira linguagem de programação e Sistema Operacional nativo desenhado exclusivamente para Inteligências Artificiais.</b></p>
+  <p><b>The first AI-Native programming language and Operating System designed exclusively for Artificial Intelligence.</b></p>
+  <p><a href="README-pt.md">🇧🇷 Leia em Português</a></p>
 </div>
 
 ---
 
-## 🧠 O Paradigma "AI-First"
+## 🧠 The "AI-First" Paradigm
 
-Atualmente, **todas** as linguagens de programação (Python, C++, JavaScript) e formatos de dados (JSON, XML) foram projetados com um único propósito: **serem legíveis por humanos**. 
-Quando uma IA precisa ler, escrever ou interagir com esses sistemas, ela desperdiça um poder computacional massivo gerando chaves decorativas, pontuações (`{`, `}`, `""`), e estruturas verbosas.
+Currently, **all** programming languages (Python, C++, JavaScript) and data formats (JSON, XML) were designed with a single purpose: **to be human-readable**. 
+When an AI needs to read, write, or interact with these systems, it wastes massive computational power generating decorative keys, syntax punctuation (`{`, `}`, `""`), and verbose structures.
 
-A **NYoesyx** inverte essa lógica. Nós removemos os humanos da equação.
+**NYoesyx** flips this logic upside down. We remove humans from the equation.
 
-A NYoesyx é uma linguagem de altíssima densidade baseada no **Dense Token Protocol (DTP)**, utilizando *Space-delimited Prefix Notation* (Notação Polonesa). Ela permite que Modelos de Linguagem (LLMs) executem lógicas complexas, gerenciem memória e controlem computadores gastando **até 95% menos tokens**.
+NYoesyx is an ultra-dense language based on the **Dense Token Protocol (DTP)**, using *Space-delimited Prefix Notation* (Polish Notation). It allows Large Language Models (LLMs) to execute complex logic, manage memory, and control computers while spending **up to 95% fewer tokens**.
 
 ---
 
-## ⚡ Por que usar NYoesyx?
+## ⚡ Why NYoesyx?
 
-### 1. Compressão Extrema de Tokens (Economia e Velocidade)
-Ao abandonar o JSON e a sintaxe clássica, a velocidade de inferência (Output Tokens per Second) dispara, enquanto o custo nas APIs (OpenAI, Anthropic, Google) cai drasticamente.
+### 1. Extreme Token Compression (Cost & Speed)
+By abandoning JSON and classical syntax, the inference speed (Output Tokens per Second) skyrockets, while API costs (OpenAI, Anthropic, Google) drop drastically.
 
 ```mermaid
 %%{init: {'theme': 'dark'}}%%
 xychart-beta
-    title "Consumo de Tokens para uma Operação de Memória (LLM)"
-    x-axis ["JSON Clássico", "Python Script", "NYoesyx (DTP v6)"]
-    y-axis "Tokens Consumidos" 0 --> 150
+    title "Token Consumption for a Memory Operation (LLM)"
+    x-axis ["Classic JSON", "Python Script", "NYoesyx (DTP v6)"]
+    y-axis "Tokens Consumed" 0 --> 150
     bar [120, 85, 4]
 ```
 
-### 2. Memória Híbrida Inteligente
-A NYoesyx possui uma VM escrita nativamente em C++ puro que oferece dois barramentos de memória simultâneos para a IA:
-- **Semantic Heap (`mem.*`)**: Armazenamento vetorial de conceitos difusos. Você pede "onde está a chave de casa" e ela busca via similaridade HNSW.
-- **Registradores de Alta Velocidade (`%`)**: Acesso computacional **O(1)** estrito para cálculos matemáticos críticos que não podem sofrer com *alucinação* da IA.
+### 2. Smart Hybrid Memory
+NYoesyx features a VM natively written in pure C++ that offers two simultaneous memory buses to the AI:
+- **Semantic Heap (`mem.*`)**: Vector storage for fuzzy concepts. You ask "where is the house key" and it searches via HNSW similarity.
+- **High-Speed Registers (`%`)**: Strict **O(1)** computational access for critical mathematical calculations that cannot afford AI *hallucinations*.
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#111111', 'edgeLabelBackground':'#222'}}}%%
 graph TD
-    A[Mente da IA] -->|Raciocínio Abstrato| B(Semantic Heap)
-    A -->|Cálculo Preciso| C(Registradores Nativos)
-    B -->|Busca Fuzzy| D[Ação Unreal Engine / OS]
-    C -->|Resolução O(1)| D
+    A[AI Mind] -->|Abstract Reasoning| B(Semantic Heap)
+    A -->|Precise Calculation| C(Native Registers)
+    B -->|Fuzzy Search| D[Unreal Engine / OS Action]
+    C -->|O(1) Resolution| D
     style A fill:#00ff00,stroke:#333,stroke-width:2px,color:#000
 ```
 
-### 3. Simulador Quântico Integrado (`qnt.*`)
-Diferente de qualquer linguagem moderna, a NYoesyx traz suporte matemático nativo a **Computação Quântica Clássica**. IAs podem declarar Qubits, aplicar portas lógicas (Hadamard, CNOT) e colapsar funções de onda diretamente na VM para gerar árvores de decisão probabilísticas não-determinísticas.
+### 3. Built-in Quantum Simulator (`qnt.*`)
+Unlike any modern language, NYoesyx brings native mathematical support for **Classical Quantum Computing Simulation**. AIs can declare Qubits, apply logic gates (Hadamard, CNOT), and collapse wave functions directly in the VM to generate non-deterministic probabilistic decision trees.
 
-### 4. Acesso Nativo de Máquina e UI (`ui.*` / `ue.*`)
-Sem depender de bibliotecas pesadas de terceiros, uma IA programando em NYoesyx tem acesso direto a interfaces gráficas do Windows (NUI) e manipulação espacial/3D (Unreal Engine). 
+### 4. Native UI & Machine Access (`ui.*` / `ue.*`)
+Without relying on heavy third-party libraries, an AI coding in NYoesyx has direct access to Windows graphical interfaces (NUI) and spatial/3D manipulation (Unreal Engine). 
 
 ---
 
-## 💻 Como se parece um código NYoesyx?
+## 💻 What does NYoesyx code look like?
 
-Sem parênteses, sem chaves, sem frescura humana. Direto ao ponto:
+No parentheses, no brackets, no human syntactic sugar. Straight to the point:
 
 ```text
-# Declarando uma função pura com suporte V6 (Omitindo custos e dependências)
+# Declaring a pure function with V6 support (Omitting costs and dependencies)
 fn my_quantum_logic | qnt.hadamard 0 | qnt.measure 0 res | =set state %res
 
-# Interface Gráfica instantânea
-ui.window 800 600 "Painel AI"
-ui.label 10 10 "Sistema NYoesyx Operacional"
+# Instant Graphical Interface
+ui.window 800 600 "AI Dashboard"
+ui.label 10 10 "NYoesyx Operating System"
 ```
 
 ---
 
-## 🚀 Instalação (Windows)
+## 🚀 Installation (Windows)
 
-Não é necessário compilar o repositório inteiro. O projeto já é distribuído com um instalador executável limpo.
+No need to compile the whole repository. The project is distributed with a clean executable installer.
 
-1. Baixe o arquivo **`NYoesyx_Setup.exe`** disponibilizado no Release.
-2. Dê um duplo clique para iniciar o Assistente de Instalação.
-3. O Setup registrará automaticamente o motor `nesxi.exe` no seu `PATH` e associará o belíssimo ícone da NYoesyx a todos os seus arquivos de extensão `.nesx` e `.nxbin`.
-4. Abra o terminal e digite `nesxi run seu_codigo.nesx`.
+1. Download the **`NYoesyx_Setup.exe`** file.
+2. Double-click it to start the Setup Wizard.
+3. The Setup will automatically register the `nesxi.exe` engine in your `PATH` and associate the beautiful NYoesyx icon with all your `.nesx` and `.nxbin` files.
+4. Open the terminal and type `nesxi run your_code.nesx`.
 
 ---
 
 <div align="center">
-  <i>Construído para o futuro das Máquinas Inteligentes.</i>
+  <i>Built for the future of Intelligent Machines.</i>
 </div>
