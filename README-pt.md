@@ -84,7 +84,7 @@ Não é necessário compilar o repositório inteiro. O projeto já é distribuí
 
 A NYoesyx é um projeto *open-source* pioneiro construído com muito esforço. Se essa linguagem ajudou você ou sua IA em pesquisas ou projetos, considere apoiar o criador!
 
-<a href="https://link.mercadopago.com.br/mrxploud" target="_blank"><img src="https://img.shields.io/badge/Mercado_Pago-00B1EA?style=for-the-badge&logo=mercado-pago&logoColor=white" alt="Doar via Mercado Pago" ></a>
+<a href="https://link.mercadopago.com.br/bytemirage" target="_blank"><img src="https://img.shields.io/badge/Mercado_Pago-00B1EA?style=for-the-badge&logo=mercado-pago&logoColor=white" alt="Doar via Mercado Pago" ></a>
 
 ---
 
