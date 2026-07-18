@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/mrxploud/nyoesyx/main/NYoesyx.png" alt="NYoesyx Logo" width="200"/>
+  <img src="bin/NYoesyx.ico" alt="NYoesyx Logo" width="200"/>
   <h1>NYoesyx (N-OS)</h1>
   <p><b>The first AI-Native programming language and Operating System designed exclusively for Artificial Intelligence.</b></p>
   <p><a href="README-pt.md">🇧🇷 Leia em Português</a></p>

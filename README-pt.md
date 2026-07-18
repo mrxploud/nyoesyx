@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SeuNome/nyoesyx/main/NYoesyx.png" alt="NYoesyx Logo" width="200"/>
+  <img src="bin/NYoesyx.ico" alt="NYoesyx Logo" width="200"/>
   <h1>NYoesyx (N-OS)</h1>
   <p><b>A primeira linguagem de programação e Sistema Operacional nativo desenhado exclusivamente para Inteligências Artificiais.</b></p>
 </div>
