@@ -80,6 +80,14 @@ Não é necessário compilar o repositório inteiro. O projeto já é distribuí
 
 ---
 
+## ☕ Apoie o Projeto
+
+A NYoesyx é um projeto *open-source* pioneiro construído com muito esforço. Se essa linguagem ajudou você ou sua IA em pesquisas ou projetos, considere pagar um café para o criador!
+
+<a href="https://buymeacoffee.com/mrxploud" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+---
+
 <div align="center">
   <i>Construído para o futuro das Máquinas Inteligentes.</i>
 </div>
