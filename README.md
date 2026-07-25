@@ -85,9 +85,7 @@ The project is now **100% Open Source** with a clean architecture and zero exter
 
 - **`src/`**: Native C++ source code (`nesxi.cpp`, `nesxi.rc`) for the Virtual Machine, compiler, and quantum engine. Includes `build.cmd` for local compilation via g++/MinGW.
 - **`tests/`**: Formal NYoesyx test suite (`*.nesx`), covering hybrid registers, transactional checking, quantum simulation, and NUI.
-- **`docs/`**: Language specifications, VM architecture, DTP manifest, and artificial alphabet/token encoding studies.
-- **`vscode/`**: Official Syntax Highlighting extension for Visual Studio Code.
-- **`benchmarks/`**: Token efficiency scripts (`benchmark.py`) comparing DTP protocol against JSON/Python.
+- **`docs/`**: Language specifications, VM architecture, and DTP protocol manifest.
 - **`bin/`**: Pre-compiled binaries (`nesxi.exe`) and system icon.
 
 ---
