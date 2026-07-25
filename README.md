@@ -85,8 +85,47 @@ The project is now **100% Open Source** with a clean architecture and zero exter
 
 - **`src/`**: Native C++ source code (`nesxi.cpp`, `nesxi.rc`) for the Virtual Machine, compiler, and quantum engine. Includes `build.cmd` for local compilation via g++/MinGW.
 - **`tests/`**: Formal NYoesyx test suite (`*.nesx`), covering hybrid registers, transactional checking, quantum simulation, and NUI.
-- **`docs/`**: Language specifications, VM architecture, and DTP protocol manifest.
+- **`docs/`**: Language specifications, VM architecture, DTP protocol manifest, and the [Technical & Security Manifesto](docs/MANIFESTO_TECNICO.md).
 - **`bin/`**: Pre-compiled binaries (`nesxi.exe`) and system icon.
+
+---
+
+## 🛠️ How to Build from Source
+
+The language engine is built in **pure C++17** under a strict *Zero Dependency* architecture (no Node.js, Python, or external packages required).
+
+1. **Windows (Via MinGW/g++)**:
+   In your terminal, navigate to the `src` folder and run the official build script:
+   ```cmd
+   cd src
+   build.cmd
+   ```
+   This compiles the static engine with `-O3` optimization and outputs the executable to `bin/nesxi.exe`.
+
+2. **Linux/macOS (POSIX)**:
+   ```bash
+   g++ -O3 -std=c++17 src/nesxi.cpp -o bin/nesxi
+   ```
+
+3. **Validation & Testing**:
+   Validate your build by running the official test suite:
+   ```bash
+   bin/nesxi run tests/v6_test.nesx
+   bin/nesxi run tests/t_reg_pure.nesx
+   ```
+
+---
+
+## 🛡️ Security & Isolation Guarantee
+
+Because NYoesyx is designed for autonomous code execution by AIs without constant human oversight, the architecture enforces strict security boundaries:
+
+- **Transactional Barrier (`sys.pure`)**: Irreversible operations (disk I/O, OS mutations, Unreal Engine actions) are strictly blocked inside speculative or pure AI execution branches, preventing accidental system destruction or destructive hallucinations.
+- **Memory Isolation (Sandboxed Heap)**: The semantic bus (`mem.*`) and native registers (`%`) operate inside sandboxed virtual memory within the C++ VM, eliminating *Buffer Overflow* risks.
+- **Zero Code Injection (No Eval Exploits)**: The DTP syntax dispatch tree decodes tokens natively in C++ without evaluating strings through a host OS shell, neutralizing *Prompt Injection* attacks.
+- **Zero Supply-Chain Risk**: Inspectable monolithic engine with zero hidden dependencies or third-party package risks.
+
+*(See our full [Technical & Security Manifesto](docs/MANIFESTO_TECNICO.md) for deep documentation).*
 
 ---
 

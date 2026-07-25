@@ -84,8 +84,47 @@ O projeto agora é **100% Open Source** com uma arquitetura limpa e sem dependê
 
 - **`src/`**: Código fonte nativo em C++ (`nesxi.cpp`, `nesxi.rc`) da Máquina Virtual, compilador e engine quântica. Inclui o script `build.cmd` para compilação local via g++/MinGW.
 - **`tests/`**: Suite de testes formais em NYoesyx (`*.nesx`), cobrindo registradores híbridos, checagem transacional, simulação quântica e NUI.
-- **`docs/`**: Especificações da linguagem, arquitetura da VM e manifesto do protocolo DTP.
+- **`docs/`**: Especificações da linguagem, arquitetura da VM, manifesto do protocolo DTP e o [Manifesto Técnico Completo](docs/MANIFESTO_TECNICO.md).
 - **`bin/`**: Binários pré-compilados (`nesxi.exe`) e ícone do sistema.
+
+---
+
+## 🛠️ Como Compilar o Código-Fonte
+
+A linguagem foi construída em **C++17 puro** com arquitetura *Zero Dependências* (sem necessidade de pacotes externos, Node ou Python).
+
+1. **No Windows (Via MinGW/g++)**:
+   No terminal, acesse a pasta `src` e rode o script oficial de compilação:
+   ```cmd
+   cd src
+   build.cmd
+   ```
+   Isso irá compilar o motor estático com otimização `-O3` e gerar o executável em `bin/nesxi.exe`.
+
+2. **No Linux/macOS (POSIX)**:
+   ```bash
+   g++ -O3 -std=c++17 src/nesxi.cpp -o bin/nesxi
+   ```
+
+3. **Validação e Testes**:
+   Valide sua compilação rodando a suite formal:
+   ```bash
+   bin/nesxi run tests/v6_test.nesx
+   bin/nesxi run tests/t_reg_pure.nesx
+   ```
+
+---
+
+## 🛡️ Garantias de Segurança e Isolamento
+
+Por ser desenhada para execução autônoma por IAs sem supervisão humana constante, a arquitetura garante segurança rigorosa:
+
+- **Barreira Transacional (`sys.pure`)**: Operações irreversíveis (gravação em disco, mutação de OS, comandos de Unreal Engine) são estritamente bloqueadas em trechos especulativos ou puros da IA, impedindo destruição acidental ou alucinação destrutiva.
+- **Isolamento de Memória (Sandboxed Heap)**: O barramento semântico (`mem.*`) e os registradores nativos (`%`) operam em memória virtual blindada na VM C++, neutralizando riscos de *Buffer Overflow*.
+- **Zero Injeção de Código (No Eval Exploits)**: A árvore de despacho sintático DTP decodifica tokens nativamente em C++ sem interpretar strings como shell do SO, neutralizando ataques de *Prompt Injection*.
+- **Zero Risco de Cadeia de Suprimentos**: Motor monolítico inspecionável sem dependências ocultas de pacotes de terceiros.
+
+*(Consulte o nosso [Manifesto Técnico e de Segurança](docs/MANIFESTO_TECNICO.md) para a documentação profunda).*
 
 ---
 
