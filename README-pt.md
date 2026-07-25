@@ -78,6 +78,17 @@ Não é necessário compilar o repositório inteiro. O projeto já é distribuí
 3. O Setup registrará automaticamente o motor `nesxi.exe` no seu `PATH` e associará o belíssimo ícone da NYoesyx a todos os seus arquivos de extensão `.nesx` e `.nxbin`.
 4. Abra o terminal e digite `nesxi run seu_codigo.nesx`.
 
+## 📂 Estrutura Open Source
+
+O projeto agora é **100% Open Source** com uma arquitetura limpa e sem dependências externas:
+
+- **`src/`**: Código fonte nativo em C++ (`nesxi.cpp`, `nesxi.rc`) da Máquina Virtual, compilador e engine quântica. Inclui o script `build.cmd` para compilação local via g++/MinGW.
+- **`tests/`**: Suite de testes formais em NYoesyx (`*.nesx`), cobrindo registradores híbridos, checagem transacional, simulação quântica e NUI.
+- **`docs/`**: Especificações da linguagem, arquitetura da VM, manifesto DTP e estudos de codificação de tokens/alfabeto artificial.
+- **`vscode/`**: Extensão oficial de Syntax Highlighting para o Visual Studio Code.
+- **`benchmarks/`**: Scripts de medição de eficiência de tokens (`benchmark.py`) comparando o protocolo DTP contra JSON/Python.
+- **`bin/`**: Binários pré-compilados (`nesxi.exe`) e ícone do sistema.
+
 ---
 
 ## ☕ Apoie o Projeto

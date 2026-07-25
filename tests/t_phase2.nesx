@@ -1,0 +1,27 @@
+# Test V6 syntax bug with inline bodies (|)
+fn my_v6_fn | ui.window 800 600 MyWindow | =set c 1 | =get c | assert eq @2 1
+
+# If the parser bug is fixed, the inner bodies work cleanly with implicit V6 syntax.
+call my_v6_fn
+
+# Test NUI
+ui.panel 0 0 100 100
+ui.btn ClickMe 99
+ui.label 10 10 Hello World
+
+# Test Quantum Simulator
+# Apply Hadamard to Qubit 0, then CNOT from 0 to 1
+qnt.hadamard 0
+qnt.cnot 0 1
+qnt.measure 1 meas_result
+# Since it's probabilistic (entangled 50/50), we just assert it ran successfully.
+log.txn quantum output: %meas_result
+
+# Test Call Stack Arguments (O(1) resolution)
+fn my_arg_test | log.txn + @arg0 @arg1
+call my_arg_test 10 20
+assert eq @10 30
+
+fn recursive_test | =set x @arg0 | log.txn %x
+call recursive_test 42
+assert eq @13 42

@@ -1,0 +1,9 @@
+# Test hybrid memory (registers) and sys.pure opcode
+fn 0.0 none $ my_pure_fn | =set my_counter 1 | log.txn 0.0 none $ + %my_counter 2 | assert 0.0 1 $ eq @1 3
+
+# Execute pure fn
+call 0.0 none $ my_pure_fn
+
+# Check purity statically
+sys.pure 0.0 none $ my_pure_fn
+assert 0.0 2 $ eq @2 pure:my_pure_fn

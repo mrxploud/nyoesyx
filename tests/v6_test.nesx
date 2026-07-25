@@ -1,0 +1,18 @@
+# V6 Test - High Density Syntax
+# Implicit params
+>move npc_hero 0 0 0
+
+# Prefix expansion
+*set my_var true
+?inf gemini 0.0 test_concept
+>anim npc_hero walk
+
+# Action vector (explodes into 4 nodes)
+!npc_rout guard patrol
+
+# Assert tests over the results to ensure V6 was parsed correctly
+assert eq @0 moved npc_hero to 0 0 0
+assert eq @1 true
+assert eq @2 [cog.inf:test_concept]
+assert eq @3 animated npc_hero walk
+assert eq @6 moved guard to 100 0 200

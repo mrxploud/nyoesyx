@@ -79,6 +79,17 @@ No need to compile the whole repository. The project is distributed with a clean
 3. The Setup will automatically register the `nesxi.exe` engine in your `PATH` and associate the beautiful NYoesyx icon with all your `.nesx` and `.nxbin` files.
 4. Open the terminal and type `nesxi run your_code.nesx`.
 
+## 📂 Open Source Structure
+
+The project is now **100% Open Source** with a clean architecture and zero external dependencies:
+
+- **`src/`**: Native C++ source code (`nesxi.cpp`, `nesxi.rc`) for the Virtual Machine, compiler, and quantum engine. Includes `build.cmd` for local compilation via g++/MinGW.
+- **`tests/`**: Formal NYoesyx test suite (`*.nesx`), covering hybrid registers, transactional checking, quantum simulation, and NUI.
+- **`docs/`**: Language specifications, VM architecture, DTP manifest, and artificial alphabet/token encoding studies.
+- **`vscode/`**: Official Syntax Highlighting extension for Visual Studio Code.
+- **`benchmarks/`**: Token efficiency scripts (`benchmark.py`) comparing DTP protocol against JSON/Python.
+- **`bin/`**: Pre-compiled binaries (`nesxi.exe`) and system icon.
+
 ---
 
 ## ☕ Support the Project

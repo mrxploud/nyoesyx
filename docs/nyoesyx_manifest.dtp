@@ -1,0 +1,9 @@
+System|name:NYoesyx_Core_Ecosystem|version:1.0
+Config|json_deprecated:true|dtp_enabled:true
+Path|interpreter:legacy_cpp/nesxi.exe
+Path|compiler:nesx.cmd
+Path|spec:nyoesyx_spec.md
+Path|arch:nyoesyx_vm_arch.md
+Dir|extension:nyoesyx-vscode
+Dir|fonts:Font
+Status|message:nyoesyx_core_isolated_and_ready

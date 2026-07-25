@@ -1,0 +1,99 @@
+{
+  "Cognitive Inference": {
+    "prefix": "cog",
+    "body": ["cog.inf ${1:0.5} ${2:0} \\$ ${3:gemini-2.0-flash} ${4:0.3} ${5:prompt}"],
+    "description": "Dispatch an async LLM inference request"
+  },
+  "Cognitive Daemon": {
+    "prefix": "daemon",
+    "body": ["cog.daemon ${1:0.2} ${2:0} \\$ ${3:1}"],
+    "description": "Spawn a persistent cognitive loop"
+  },
+  "Memory Set": {
+    "prefix": "mset",
+    "body": ["mem.set ${1:0.0} ${2:none} \\$ ${3:concept_tag} ${4:value}"],
+    "description": "Store a value in the Semantic Heap"
+  },
+  "Memory Get": {
+    "prefix": "mget",
+    "body": ["mem.get ${1:0.0} ${2:0} \\$ ${3:concept_tag}"],
+    "description": "Retrieve a value from the Semantic Heap"
+  },
+  "Memory Embed": {
+    "prefix": "membed",
+    "body": ["mem.embed ${1:0.0} ${2:0} \\$ ${3:concept_tag}"],
+    "description": "Embed a dependency output into the Semantic Heap"
+  },
+  "Memory Recall": {
+    "prefix": "mrecall",
+    "body": ["mem.recall ${1:0.0} ${2:0} \\$ ${3:fuzzy_query}"],
+    "description": "Fuzzy search the Semantic Heap"
+  },
+  "Memory Sync": {
+    "prefix": "msync",
+    "body": ["mem.sync ${1:0.1} ${2:0} \\$ ${3:all} ${4:message}"],
+    "description": "Broadcast to the IA2IA coordination stream"
+  },
+  "Logic Transform": {
+    "prefix": "log",
+    "body": ["log.txn ${1:0.0} ${2:none} \\$ ${3:+ 1 2}"],
+    "description": "Evaluate a Prefix AST expression"
+  },
+  "System Spawn": {
+    "prefix": "spawn",
+    "body": ["sys.spawn ${1:0.3} ${2:0} \\$ ${3:script.nesx}"],
+    "description": "Spawn a child sub-VM"
+  },
+  "Net Server": {
+    "prefix": "server",
+    "body": ["net.server ${1:0.0} ${2:none} \\$ ${3:8000}"],
+    "description": "Allocate a native HTTP server"
+  },
+  "UE Log": {
+    "prefix": "ulog",
+    "body": ["ue.log ${1:0.0} ${2:0} \\$ ${3:message}"],
+    "description": "Print to UE screen and log"
+  },
+  "UE Spawn Actor": {
+    "prefix": "uspawn",
+    "body": ["ue.spawn ${1:0.0} ${2:0} \\$ ${3:actor_concept} ${4:0} ${5:0} ${6:0}"],
+    "description": "Spawn an actor in the 3D world"
+  },
+  "UE Move": {
+    "prefix": "umove",
+    "body": ["ue.move ${1:0.1} ${2:0} \\$ ${3:concept} ${4:x} ${5:y} ${6:z}"],
+    "description": "Move an actor to a location"
+  },
+  "UE Animation": {
+    "prefix": "uanim",
+    "body": ["ue.anim ${1:0.0} ${2:0} \\$ ${3:concept} ${4:anim_name}"],
+    "description": "Play animation on an actor"
+  },
+  "UE FX": {
+    "prefix": "ufx",
+    "body": ["ue.fx ${1:0.0} ${2:0} \\$ ${3:effect} ${4:x} ${5:y} ${6:z}"],
+    "description": "Trigger a Niagara particle effect"
+  },
+  "UE Sound": {
+    "prefix": "usound",
+    "body": ["ue.sound ${1:0.0} ${2:0} \\$ ${3:sound} ${4:x} ${5:y} ${6:z}"],
+    "description": "Play sound at a location"
+  },
+  "UE Destroy": {
+    "prefix": "udestroy",
+    "body": ["ue.destroy ${1:0.0} ${2:0} \\$ ${3:concept}"],
+    "description": "Destroy an actor by concept tag"
+  },
+  "Full NPC Template": {
+    "prefix": "npc",
+    "body": [
+      "# ${1:NPC Name} — AI-Controlled",
+      "mem.set 0.0 none \\$ ${1:npc_name} ${2:idle}",
+      "cog.inf 0.5 0 \\$ gemini-2.0-flash 0.3 decide_action_for ${1:npc_name}",
+      "ue.log 0.0 1 \\$ ${1:npc_name} AI decided",
+      "ue.move 0.1 1 \\$ ${1:npc_name} ${3:0} ${4:0} ${5:0}",
+      "ue.anim 0.0 3 \\$ ${1:npc_name} ${6:idle_anim}"
+    ],
+    "description": "Full AI-controlled NPC template"
+  }
+}

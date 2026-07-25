@@ -1,0 +1,71 @@
+{
+  "scopeName": "source.nyoesyx",
+  "name": "NYoesyx DTP",
+  "fileTypes": ["nesx"],
+  "patterns": [
+    {
+      "name": "comment.line.number-sign.nyoesyx",
+      "match": "#.*$"
+    },
+    {
+      "name": "keyword.operator.separator.nyoesyx",
+      "match": "\\$"
+    },
+    {
+      "name": "keyword.control.cognitive.nyoesyx",
+      "match": "\\b(cog\\.inf|cog\\.daemon)\\b"
+    },
+    {
+      "name": "keyword.control.memory.nyoesyx",
+      "match": "\\b(mem\\.set|mem\\.get|mem\\.embed|mem\\.recall|mem\\.sync)\\b"
+    },
+    {
+      "name": "keyword.control.logic.nyoesyx",
+      "match": "\\b(log\\.txn)\\b"
+    },
+    {
+      "name": "keyword.control.system.nyoesyx",
+      "match": "\\b(sys\\.spawn)\\b"
+    },
+    {
+      "name": "keyword.control.network.nyoesyx",
+      "match": "\\b(net\\.server)\\b"
+    },
+    {
+      "name": "keyword.control.unreal.nyoesyx",
+      "match": "\\b(ue\\.log|ue\\.spawn|ue\\.destroy|ue\\.move|ue\\.anim|ue\\.fx|ue\\.sound)\\b"
+    },
+    {
+      "name": "keyword.control.trace.nyoesyx",
+      "match": "\\b(trace\\.dispatch|trace\\.complete|trace\\.error)\\b"
+    },
+    {
+      "name": "keyword.control.coordination.nyoesyx",
+      "match": "\\b(agent|msg)\\b"
+    },
+    {
+      "name": "constant.numeric.float.nyoesyx",
+      "match": "\\b[0-9]+\\.[0-9]+\\b"
+    },
+    {
+      "name": "constant.numeric.integer.nyoesyx",
+      "match": "\\b[0-9]+\\b"
+    },
+    {
+      "name": "constant.language.nyoesyx",
+      "match": "\\bnone\\b"
+    },
+    {
+      "name": "keyword.operator.arithmetic.nyoesyx",
+      "match": "(?<=\\$ )([+\\-*/])"
+    },
+    {
+      "name": "support.function.model.nyoesyx",
+      "match": "\\b(gemini[a-zA-Z0-9._-]*|claude[a-zA-Z0-9._-]*|glm[a-zA-Z0-9._-]*|gpt[a-zA-Z0-9._-]*)\\b"
+    },
+    {
+      "name": "entity.name.tag.agent.nyoesyx",
+      "match": "\\b(Antigravity|Claude|ZCode|Language_Architect)\\b"
+    }
+  ]
+}

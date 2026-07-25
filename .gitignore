@@ -1,0 +1,9 @@
+# Build artifacts and binaries in src
+src/*.obj
+src/*.exe
+src/*.log
+*.bak
+*.tmp
+_recovery/
+tmp/
+.vscode/
