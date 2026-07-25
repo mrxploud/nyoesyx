@@ -84,7 +84,7 @@ O projeto agora é **100% Open Source** com uma arquitetura limpa e sem dependê
 
 - **`src/`**: Código fonte nativo em C++ (`nesxi.cpp`, `nesxi.rc`) da Máquina Virtual, compilador e engine quântica. Inclui o script `build.cmd` para compilação local via g++/MinGW.
 - **`tests/`**: Suite de testes formais em NYoesyx (`*.nesx`), cobrindo registradores híbridos, checagem transacional, simulação quântica e NUI.
-- **`docs/`**: Especificações da linguagem, arquitetura da VM, manifesto do protocolo DTP e o [Manifesto Técnico Completo](docs/MANIFESTO_TECNICO.md).
+- **`docs/`**: Especificações da linguagem, arquitetura da VM, manifesto do protocolo DTP, o [Manifesto Técnico Completo](docs/MANIFESTO_TECNICO.md) e o [FAQ & Defesa da Arquitetura](docs/FAQ_ARQUITETURA.md).
 - **`bin/`**: Binários pré-compilados (`nesxi.exe`) e ícone do sistema.
 
 ---

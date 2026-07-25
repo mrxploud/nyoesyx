@@ -85,7 +85,7 @@ The project is now **100% Open Source** with a clean architecture and zero exter
 
 - **`src/`**: Native C++ source code (`nesxi.cpp`, `nesxi.rc`) for the Virtual Machine, compiler, and quantum engine. Includes `build.cmd` for local compilation via g++/MinGW.
 - **`tests/`**: Formal NYoesyx test suite (`*.nesx`), covering hybrid registers, transactional checking, quantum simulation, and NUI.
-- **`docs/`**: Language specifications, VM architecture, DTP protocol manifest, and the [Technical & Security Manifesto](docs/MANIFESTO_TECNICO.md).
+- **`docs/`**: Language specifications, VM architecture, DTP protocol manifest, the [Technical & Security Manifesto](docs/MANIFESTO_TECNICO.md), and the [FAQ & Architecture Defense](docs/FAQ_ARQUITETURA.md).
 - **`bin/`**: Pre-compiled binaries (`nesxi.exe`) and system icon.
 
 ---
