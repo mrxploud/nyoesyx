@@ -198,6 +198,44 @@ Em suma: o nosso "formato de serialização de dados" **é a própria Árvore Si
 
 ---
 
+## 🛑 Questão 7: "É um golpe ou malware? O autor esconde o código-fonte para você baixar um .exe suspeito?"
+
+### Crítica da Comunidade:
+> *"Trata-se de um golpe. Não baixe o arquivo .exe. O autor mente ao dizer que o projeto é de código aberto, pois esconde o código-fonte para que ninguém possa auditá-lo. É apenas uma isca usando promessas tecnológicas falsas para fazer você instalar um arquivo .exe suspeito."*
+
+### Resposta Técnica da Arquitetura NYoesyx:
+
+Esse alerta é um reflexo de extrema responsabilidade, prudência e maturidade profissional por parte da comunidade de desenvolvedores e analistas de segurança. 
+
+Na cibersegurança, **qualquer projeto que se declare "Open Source" mas disponibilize apenas um binário pré-compilado (`.exe`) sem o código-fonte explícito para inspeção DEVE ser considerado suspeito** e acender todos os alertas de segurança contra malware ou *trojans*. A atitude do comentarista de recomendar cautela ("não baixe o .exe") está 100% correta e alinhada com as melhores práticas da indústria.
+
+Vamos esclarecer o mal-entendido histórico que gerou essa impressão e reafirmar o compromisso **Zero-Trust** da NYoesyx:
+
+#### 1. O Mal-Entendido Histórico da Liberação Inicial
+Quando as primeiras discussões sobre a NYoesyx surgiram nas redes e fóruns, o repositório público estava em fase de transição estrutural. Inicialmente, apenas os binários de demonstração haviam sido disponibilizados no Git, enquanto a pasta original do projeto C++ estava passando por uma limpeza local rigorosa para remover arquivos temporários de compilação (`*.obj`, `*.tmp`), scripts de testes de bancada e metadados de IDE que deixavam o repositório desorganizado. 
+- Foi essa janela de tempo transição — onde o link estava ativo mas o código nativo limpo ainda não havia sido submetido ao GitHub — que gerou a impressão totalmente justificável de que o código estaria sendo "escondido".
+
+#### 2. Transparência Total: O Código-Fonte Está 100% Público e Inspecionável
+Hoje, não há absolutamente nada oculto ou proprietário no projeto. Todo o ecossistema está disponível no repositório com **Zero Dependências** externas e arquitetura limpa:
+- **O Código do Compilador e VM**: O código-fonte C++17 integral e nativo do interpretador, do avaliador em Notação Polonesa DTP e do motor de simulação quântica está aberto no arquivo [`src/nesxi.cpp`](file:///d:/Usuarios/mathe/Desktop/nyoesyx/NYoesyx_Release/src/nesxi.cpp).
+- **Sem Telemetria ou DLLs Obscuras**: Não há chamadas de rede ocultas, bibliotecas de rastreamento ou dependências de terceiros. O código é C++ puro.
+
+#### 3. Filosofia Zero-Trust: "Don't Trust, Verify" (Não Baixe o `.exe`, Compile Você Mesmo!)
+Nós apoiamos integralmente o conselho de segurança do crítico e vamos além: **nós encorajamos que NENHUM desenvolvedor baixe ou execute o `.exe` diretamente se sentir qualquer insegurança ou dúvida**.
+
+A beleza de um projeto 100% Open Source e sem dependências é que você possui controle total e soberano para auditar e gerar seu próprio executável do zero em menos de 5 segundos:
+1. **Audite a Fonte**: Abra o arquivo [`src/nesxi.cpp`](file:///d:/Usuarios/mathe/Desktop/nyoesyx/NYoesyx_Release/src/nesxi.cpp) em qualquer editor e inspecione cada linha de código do compilador e da máquina virtual.
+2. **Compile Localmente**: No seu próprio terminal Linux, macOS ou Windows (via MinGW ou g++), execute o comando nativo:
+   ```bash
+   g++ -O3 src/nesxi.cpp -o nesxi.exe
+   ```
+   *(Ou utilize o script prático [`src/build.cmd`](file:///d:/Usuarios/mathe/Desktop/nyoesyx/NYoesyx_Release/src/build.cmd) incluso no repositório).*
+3. **Execute seus Testes**: Rode a suite oficial de testes offline (`bin/nesxi run tests/v6_test.nesx`) com o binário limpo que você mesmo acabou de compilar em sua máquina.
+
+A NYoesyx foi construída para elevar o rigor e a segurança da computação autônoma. A auditoria aberta e o ceticismo científico da comunidade são os maiores aliados dessa missão.
+
+---
+
 <div align="center">
   <i>NYoesyx — Raciocínio rigoroso para uma nova era da computação.</i>
 </div>
