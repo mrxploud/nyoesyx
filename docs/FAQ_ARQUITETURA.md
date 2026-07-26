@@ -236,6 +236,35 @@ A NYoesyx foi construída para elevar o rigor e a segurança da computação aut
 
 ---
 
+## 🇧🇷 Questão 8: "Você codifica em português e ela converte para alguma linguagem comercial como Python ou C++?"
+
+### Crítica da Comunidade:
+> *"Você está codificando em português e ela converte para alguma linguagem comercial?"*
+
+### Resposta Técnica da Arquitetura NYoesyx:
+
+Essa dúvida é extremamente comum para quem tem o primeiro contato com o projeto. Como grande parte da nossa documentação explicativa, tutoriais e o manifesto conceitual foram escritos originalmente em português, é natural supor que a NYoesyx seja um "transpilador" (uma ferramenta onde você digita palavras em português como `se`, `para`, `imprimir` e um script traduz isso para Python, JavaScript ou C++ nos bastidores).
+
+A realidade arquitetural, no entanto, é o oposto: **não codificamos em português e não convertemos para nenhuma linguagem comercial intermediária**.
+
+#### 1. Agnosticismo de Idioma Humano (A Sintaxe NÃO usa Português nem Inglês)
+A sintaxe nativa de um arquivo `.nesx` não utiliza palavras de nenhuma linguagem falada por humanos. A NYoesyx é uma linguagem **AI-Native** construída sobre o **DTP (Dense Token Protocol)**, utilizando estritamente **Notação Polonesa Prefixada Espacial e Símbolos Operacionais de Alta Densidade**:
+- Em vez de usar palavras verbosas em inglês (`function`, `return`, `if/else`) ou português (`funcao`, `retornar`, `se/senao`), utilizamos operadores matemáticos e transacionais compactos como `=set val + %reg 10`, `qnt.hadamard 0`, `sys.pure` ou `fold`.
+- Isso significa que a linguagem fala universalmente a língua da matemática, das árvores sintáticas (ASTs) e dos tensores de atenção das redes neurais, sendo 100% agnóstica a idiomas humanos.
+
+#### 2. Não É um Transpilador: Execução Direta via Máquina Virtual C++ (`nesxi.exe`)
+Nós não geramos código-fonte intermediário para ser rodado em interpretadores comerciais de terceiros (não convertemos um `.nesx` para gerar arquivos `.py`, `.js` ou `.cs`).
+- A NYoesyx possui seu **próprio Compilador e Máquina Virtual (VM) nativos escritos em C++17 puro** ([`src/nesxi.cpp`](file:///d:/Usuarios/mathe/Desktop/nyoesyx/NYoesyx_Release/src/nesxi.cpp)).
+- Quando você executa `nesxi run arquivo.nesx`, o nosso compilador C++ lê os tokens ultradensos, monta a Árvore Sintática Abstrata diretamente na memória RAM da máquina host e despacha as instruções nativamente nos registradores e processadores do sistema operacional com altíssima velocidade e baixo consumo de memória (sem precisar instalar Node.js, Python ou qualquer runtime comercial por trás).
+
+#### 3. Por que a Documentação está em Português?
+A documentação e os manifestos principais estão em português porque o projeto nasceu no Brasil! Temos um orgulho imenso de produzir ciência da computação de ponta, pesquisa arquitetural para IAs autônomas e inovação em linguagens de programação em língua portuguesa para o cenário de tecnologia global. 
+*(Para a comunidade internacional, mantemos também a documentação em inglês, como o [`README.md`](file:///d:/Usuarios/mathe/Desktop/nyoesyx/NYoesyx_Release/README.md) global).*
+
+Em suma: o humano lê a documentação em português (ou inglês), mas na hora da execução, **a IA e a Máquina Virtual comunicam-se diretamente em matemática pura e tokens condensados C++**!
+
+---
+
 <div align="center">
   <i>NYoesyx — Raciocínio rigoroso para uma nova era da computação.</i>
 </div>
